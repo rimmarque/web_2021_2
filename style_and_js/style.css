@@ -1,15 +1,15 @@
-#main-play_area {
-    background-color: black;
+#mainPlayArea {
+    background-image: url("https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/04/it_can_be_done._-_an_earth_day_message/21972204-3-eng-GB/It_can_be_done._-_an_Earth_Day_message_pillars.jpg");
     width: 400px;
     height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #player-controlled-shooter {
-    width: 40px;
-    height: 20px;
+    width: 60px;
     position: relative;
     left: 20px;
     top: 180px;
-    background-color: white;
+    transition: all 0.4s;
 }
-
