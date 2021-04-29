@@ -13,3 +13,9 @@
     top: 180px;
     transition: all 0.4s;
 }
+
+.laser {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}

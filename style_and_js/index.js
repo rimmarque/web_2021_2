@@ -38,3 +38,34 @@ function letShipFly(event) {
     }
 }
 
+window.addEventListener('keydown', letShipFly)
+
+function fireLaser() {
+    let laser = createLaserElement()
+    mainPlayArea.appendChild(laser)
+    let laserSFX = new Audio('laserShot.mp3')
+    laserSFX.play()
+    moveLaser(laser)
+}
+
+function createLaserElement() {
+    let xPosition = parseInt(window.getComputedStyle(shooter).getPropertyValue('left'));
+    let yPosition = parseInt(window.getComputedStyle(shooter).getPropertyValue('top'));
+    let newLaser = document.createElement('img')
+    newLaser.src = 'arts/laser.png'
+    newLaser.classList.add('laser')
+    newLaser.style.left = `${xPosition}px`
+    newLaser.style.top = `${yPosition - 10}px`
+    return newLaser
+}
+
+function moveLaser(laser) {
+    let laserInterval = setInterval(() => {
+        let xPosition = parseInt(laser.style.left)
+        if(xPosition === 340) {
+            laser.remove()
+        } else {
+            laser.style.left = `${xPosition + 4}px`
+        }
+    }, 10)
+}
