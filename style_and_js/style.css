@@ -19,3 +19,26 @@
     height: 20px;
     position: absolute;
 }
+
+.monster{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 
+    0 0 6px 3px #fff,
+    0 0 5px 6px #fff,
+    0 0 9px 9px #fff;
+}
+.monster-transition {
+    opacity: 1;
+    transition: opacity 1.5s ease-out;
+}
+
+.dead-monster{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    opacity: 0;
+}
