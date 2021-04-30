@@ -177,3 +177,44 @@ function moveMonster(monster) {
       }
     }, 30)
   }
+
+function gameOver() {
+    window.removeEventListener("keydown", letShipFly)
+    justice.pause()
+    let gameOverSfx = new Audio('audio/game-over.m4a')
+    gameOverSfx.play()
+    clearInterval(monsterInterval)
+    let monsters = document.querySelectorAll(".monster")
+    monsters.forEach(monster => monster.remove())
+    let lasers = document.querySelectorAll(".laser")
+    lasers.forEach(laser => laser.remove())
+    setTimeout(() => {
+      alert(`Нифига ты баклажан, ты набрал вот столько то очков ${scoreCounter.innerText}! Bruh`)
+      shooter.style.top = "180px"
+      startButton.style.display = "block"
+      instructions.style.display = "block"
+      scoreCounter.innerText = 0
+    }, 1100)
+  }
+  
+function moveLaser(laser) {
+    let laserInterval = setInterval(() => {
+      let xPosition = parseInt(laser.style.left)
+      let monsters = document.querySelectorAll(".monster")
+      monsters.forEach(monster => {
+        if (checkLaserCollision(laser, monster)) {
+          let explosion = new Audio('audio/explosion.m4a')
+          explosion.play()
+          monster.src = "images/explosion.png"
+          monster.classList.remove("monster")
+          monster.classList.add("dead-monster")
+          scoreCounter.innerText = parseInt(scoreCounter.innerText) + 100
+        }
+      })
+      if (xPosition === 340) {
+        laser.remove()
+      } else {
+        laser.style.left = `${xPosition + 4}px`
+      }
+    }, 10)
+  }

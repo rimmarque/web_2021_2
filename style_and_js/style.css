@@ -42,3 +42,7 @@
     position: absolute;
     opacity: 0;
 }
+
+#score{
+    margin-top: 400px;
+}
