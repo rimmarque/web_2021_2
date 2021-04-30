@@ -189,7 +189,7 @@ function gameOver() {
     let lasers = document.querySelectorAll(".laser")
     lasers.forEach(laser => laser.remove())
     setTimeout(() => {
-      alert(`Нифига ты баклажан, ты набрал вот столько то очков ${scoreCounter.innerText}! Bruh`)
+      alert(`Нифига ты баклажан, ты набрал вот столько-то очков ${scoreCounter.innerText}! Bruh`)
       shooter.style.top = "180px"
       startButton.style.display = "block"
       instructions.style.display = "block"

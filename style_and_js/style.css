@@ -18,6 +18,8 @@
     width: 20px;
     height: 20px;
     position: absolute;
+    margin-left: 60px;
+    margin-top: 25px;
 }
 
 .monster{
